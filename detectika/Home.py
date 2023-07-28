@@ -11,7 +11,7 @@ Using the fraud detection model built by NSEIT which is trained over 100k public
 To experience the application using your own first-party data please see the expected workflow below.
 """)
 
-st.header('Description')
+st.header('Steps to Use')
 st.markdown("""
 Expected workflow for client specific outputs:
 
@@ -24,7 +24,7 @@ Expected workflow for client specific outputs:
 3. NSEIT will notify client when they are able to run the application in their account to generate their client specific outputs.
 """)
 
-st.header('Steps to Use')
+st.header('Description')
 st.markdown("""
 Business Benefits
 
