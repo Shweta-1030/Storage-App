@@ -7,19 +7,23 @@ NSEIT brings the power of fraud detection directly to your Snowflake account. Us
 
 Using the fraud detection model built by NSEIT which is trained over 100k publicly available credit card transactions, the client can detect fraud using batch mode.
 
-To experience the application using your own first-party data please see the expected workflow below.
+To experience the application using your own first-party data please see the expected workflow below.""")
 
+st.header('Description')
+st.markdown("""
 Expected workflow for client specific outputs:
 
-1. Customer sends email to NSEIT at: snowflake_support@nseit.com with the following information.
+1. Customer sends email to NSEIT at: sample@nseit.com with the following information.
 \n\n-type of transactions
 \n\n-transaction table metadata ( for identifying customer specific features )
 
 2. NSEIT will access client data and run it against NSEIT's proprietary algorithm to generate client specific machine learning model. (Estimated time to deliver is 20 business days)
 
 3. NSEIT will notify client when they are able to run the application in their account to generate their client specific outputs.
+""")
 
-
+st.header('Steps to Use')
+st.markdown("""
 Business Benefits
 
 Batch mode fraud detection
@@ -33,4 +37,10 @@ Zero development
 
 Security
 - Consumer data is kept private and secure. After the app is installed, it is recommended by the provider to grant the following privileges as needed.
+""")
+
+st.header('Sample Queries ')
+st.markdown("""
+SELECT TRANSACTION_ID, TX_DATETIME, CUSTOMER_ID, TERMINAL_ID, TX_AMOUNT, detect_fraud_udf_batch(OBJECT_CONSTRUCT(*)) AS FRAUD_PROB 
+FROM FRAUD_DETECTOR_APP.CODE_SCHEMA.CUSTOMER_TRX_FRAUD_FEATURES_VIEW
 """)
