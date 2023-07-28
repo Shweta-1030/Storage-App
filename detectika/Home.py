@@ -43,4 +43,4 @@ st.header('Sample Queries ')
 code = '''SELECT TRANSACTION_ID, TX_DATETIME, CUSTOMER_ID, TERMINAL_ID, TX_AMOUNT, 
 detect_fraud_udf_batch(OBJECT_CONSTRUCT(*)) AS FRAUD_PROB FROM 
 FRAUD_DETECTOR_APP.CODE_SCHEMA.CUSTOMER_TRX_FRAUD_FEATURES_VIEW'''
-st.code(code, language='SQL')
+st.code(code, language='sql')
