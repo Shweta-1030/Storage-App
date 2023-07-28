@@ -13,7 +13,7 @@ st.header('Description')
 st.markdown("""
 Expected workflow for client specific outputs:
 
-1. Customer sends email to NSEIT at: sample@nseit.com with the following information.
+1. Customer sends email to NSEIT at: snowflake_support@nseit.com with the following information.
 \n\n-type of transactions
 \n\n-transaction table metadata ( for identifying customer specific features )
 
