@@ -11,19 +11,6 @@ Using the fraud detection model built by NSEIT which is trained over 100k public
 To experience the application using your own first-party data please see the expected workflow below.
 """)
 
-st.header('Steps to Use')
-st.markdown("""
-Expected workflow for client specific outputs:
-
-1. Customer sends email to NSEIT at: snowflake_support@nseit.com with the following information.
-\n\n-type of transactions
-\n\n-transaction table metadata ( for identifying customer specific features )
-
-2. NSEIT will access client data and run it against NSEIT's proprietary algorithm to generate client specific machine learning model. (Estimated time to deliver is 20 business days)
-
-3. NSEIT will notify client when they are able to run the application in their account to generate their client specific outputs.
-""")
-
 st.header('Description')
 st.markdown("""
 Business Benefits
@@ -39,6 +26,19 @@ Zero development
 
 Security
 - Consumer data is kept private and secure. After the app is installed, it is recommended by the provider to grant the following privileges as needed.
+""")
+
+st.header('Steps to Use')
+st.markdown("""
+Expected workflow for client specific outputs:
+
+1. Customer sends email to NSEIT at: snowflake_support@nseit.com with the following information.
+\n\n-type of transactions
+\n\n-transaction table metadata ( for identifying customer specific features )
+
+2. NSEIT will access client data and run it against NSEIT's proprietary algorithm to generate client specific machine learning model. (Estimated time to deliver is 20 business days)
+
+3. NSEIT will notify client when they are able to run the application in their account to generate their client specific outputs.
 """)
 
 st.header('Sample Queries ')
