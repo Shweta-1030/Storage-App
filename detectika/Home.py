@@ -6,4 +6,4 @@ st.title('Documentation')
 
 st.header('DETECTIKA DOC')
 
-st.header('SENTILYZER DOC')
+st.header('SENTILYZER Doc')
