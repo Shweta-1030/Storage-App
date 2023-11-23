@@ -1,6 +1,6 @@
 import streamlit as st
 
-#st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 
 st.title('DETECTIKA DOCUMENTATION')
 
@@ -14,9 +14,8 @@ To experience the application using your own first-party data please see the exp
 """)
 
 st.header('Description')
+st.subheader('Business Benefits:')
 st.markdown("""
-Business Benefits
-
 Batch mode fraud detection
 - Analyze the fraudlent transactions from client specific historical data
 
@@ -31,12 +30,11 @@ Security
 """)
 
 st.header('Steps to Use')
+st.subheader('Expected workflow for client specific outputs:')
 st.markdown("""
-Expected workflow for client specific outputs:
-
 1. Customer sends email to NSEIT at: snowflake_support@nseit.com with the following information.
-\n\n-type of transactions
-\n\n-transaction table metadata ( for identifying customer specific features )
+- type of transactions
+- transaction table metadata ( for identifying customer specific features )
 
 2. NSEIT will access client data and run it against NSEIT's proprietary algorithm to generate client specific machine learning model. (Estimated time to deliver is 20 business days)
 
