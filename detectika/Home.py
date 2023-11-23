@@ -4,6 +4,6 @@ st.set_page_config(layout="wide")
 
 st.title('Home Page')
 
-st.header('DETECTIKA DOCUMENTATION')
+st.header('DETECTIKA DOC')
 
-st.header('SENTILYZER APPLICATION')
+st.header('SENTILYZER APP')
