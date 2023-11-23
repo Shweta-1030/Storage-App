@@ -44,5 +44,7 @@ st.markdown("""
 """)
 
 st.header('Sample Queries')
-code = '''select PRODUCT_REVIEW, predict_sentiment_vect(PRODUCT_REVIEW) as SENTIMENT from SENTILYZER.CODE_SCHEMA.NEW_REVIEWS'''
+code = '''select PRODUCT_REVIEW,
+predict_sentiment_vect(PRODUCT_REVIEW) as SENTIMENT 
+from SENTILYZER.CODE_SCHEMA.NEW_REVIEWS'''
 st.code(code, language='sql')
