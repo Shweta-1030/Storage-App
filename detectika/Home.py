@@ -4,6 +4,6 @@ st.set_page_config(layout="wide")
 
 st.title('Documentation📖')
 
-st.header('DETECTIKA DOC🔍')
+st.subheader('DETECTIKA DOC🔍')
 
-st.header('SENTILYZER DOC😄')
+st.subheader('SENTILYZER DOC😄')
