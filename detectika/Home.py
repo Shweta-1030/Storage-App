@@ -6,4 +6,4 @@ st.title('Home Page')
 
 st.header('DETECTIKA DOC')
 
-st.header('SENTILYZER APP')
+st.header('SENTILYZER DOC')
