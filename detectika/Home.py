@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 
-st.title('Home Page')
+#st.title('Home Page')
 
 st.header('DETECTIKA DOC')
 
