@@ -7,3 +7,5 @@ st.title('Documentation📖')
 st.subheader('DETECTIKA DOC🔍')
 
 st.subheader('SENTILYZER DOC😄')
+
+st.subheader('CHURNWISE DOC💹')
