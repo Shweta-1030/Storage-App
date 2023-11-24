@@ -20,7 +20,7 @@ Batch mode fraud detection
 - Analyze the fraudlent transactions from client specific historical data
 
 Accelerated predictions
-- making use of NSEIT's proprietary machine learning algorithm the client can start predicting fraud in no time
+- Making use of NSEIT's proprietary machine learning algorithm the client can start predicting fraud in no time
 
 Zero development 
 - The client does not have to handle any development activities as it is entirely handled by the NSEIT team
