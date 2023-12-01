@@ -3,7 +3,7 @@ import pandas as pd
 
 st.set_page_config(layout="wide")
 
-st.title('Equity Stock Futures & Opions')
+st.title('Equity Stock Futures & Options')
 
 
 st.header('What is Future and Option?')
