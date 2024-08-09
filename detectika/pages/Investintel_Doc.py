@@ -69,16 +69,6 @@ st.markdown("""
 5.) Once the application is installed navigate to the configuration page of the streamlit application and input the secret object created in step 2 and external access integration object created in step 3. 
 """)
 
-st.header('Sample Queries')
-st.markdown("""
-- The below query uses the table from sample dataset. 
-- It can be replaced with any table containing the reviews in consumer account.
-""")
-code = '''select PRODUCT_REVIEW,
-predict_sentiment_vect(PRODUCT_REVIEW) as SENTIMENT 
-from SENTILYZER.CODE_SCHEMA.NEW_REVIEWS '''
-st.code(code, language='sql')
-
 st.header('Sample Questions')
 st.markdown("""
 1.) which schemes had the best avg NAV since last year
