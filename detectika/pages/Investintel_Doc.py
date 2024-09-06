@@ -6,72 +6,75 @@ st.title('INVESTINTEL')
 
 st.header('Introduction')
 st.markdown("""
-Investintel is a powerful tool designed to provide the latest information on large-cap mutual funds in the Indian capital market. Users can ask questions in natural language, which are then translated into SQL queries using OpenAI's capabilities. The results of these queries are instantly returned, offering precise and up-to-date data. Additionally, the platform allows users to visualize the results without writing any code. With Investintel, users can easily access critical metrics such as the Net Asset Value (NAV) of specific schemes, essential for assessing fund performance.
+Investintel is designed to provide the latest information on large-cap mutual funds in the Indian capital market. By leveraging the power of OpenAI's language models, Investintel allows users to input questions in natural language, which are then dynamically translated into SQL queries. These queries are processed instantly, delivering accurate and up-to-date results. Additionally, Investintel offers built-in data visualization capabilities, enabling users to generate charts and graphs without writing any code. The platform ensures that users have access to critical financial metrics, such as the Net Asset Value (NAV) of specific mutual fund schemes, essential for evaluating fund performance.
+Furthermore, Investintel offers flexibility by allowing clients to request additional data categories beyond large-cap mutual funds, which can be integrated based on specific needs.           
 """)
 
-st.header('Description')
-st.subheader('Business Benefits:')
+st.header('Features Overview')
+st.subheader('1.	Query Data Using Natural Language')
 st.markdown("""
-Query data using Natural Language
-- User queries in natural language are seamlessly converted into SQL queries, making it easy for business users to access and analyze data without requiring technical expertise.
+•	Description: Investintel empowers users to retrieve and analyze mutual fund data by simply asking questions in everyday language. There's no need for knowledge of SQL or any other database querying language. OpenAI's powerful natural language processing (NLP) capabilities convert user queries into SQL statements that fetch relevant data from the database.
+•	Use Case: Users without technical expertise can effortlessly access complex financial information. For example, asking "Show me the top 5 schemes with the highest NAV as per the latest date" would retrieve the most recent top-performing schemes.
+""")
+st.subheader('2.	Up-to-Date Information')
+st.markdown("""
+•	Description: Investintel provides daily updated data for all large-cap mutual funds by 9:00 A.M. IST. This ensures that users always have the latest information at their fingertips, essential for making timely investment decisions.
+•	Use Case: Investors looking for the most recent NAV of their preferred mutual funds can easily check the data first thing in the morning.
+""")
+st.subheader('3.	Inbuilt Visualization')
+st.markdown("""
+•	Description: The platform is equipped with built-in data visualization tools. Users can generate charts, graphs, and other visual representations of data directly from their queries without the need for writing any code. This makes it easier to interpret trends, comparisons, and other insights from the raw data.
+•	Use Case: After querying data, users can quickly visualize performance trends for a specific mutual fund over time or compare multiple funds' NAV performance in a graphical format.
+""")
+st.subheader('4.	Zero Development')
+st.markdown("""
+•	Description: Clients using Investintel are completely free from development-related tasks. All technical aspects, including query processing, database management, and system updates, are managed by the NSEIT team.
+•	Use Case: Businesses and individual users can focus entirely on analyzing and making decisions based on the data, without worrying about managing the infrastructure or handling maintenance.
 
-Up to date information
-- The latest data for all large-cap funds is available daily by 9:00 A.M. IST. 
-
-Inbuilt Visualization
-- The application also has the capability to generate visualizations without the need for writing any code.
-
-Zero development
-- The client does not have to handle any development activities as it is entirely handled by the NSEIT team.
+""")
+st.subheader('5.	Custom Data on Request')
+st.markdown("""
+•	Description: While Investintel focuses on large-cap mutual funds, users may require data from additional categories, such as small-cap or mid-cap funds. In such cases, the required data can be provided on request, ensuring the platform is flexible to specific user needs.
+•	Use Case: A client who specializes in mid-cap funds can request the NSEIT team to add these data categories to their application environment for deeper analysis.
 """)
 
-st.header('Application configuration')
-st.subheader('Please follow the below instructions for configuring the Investintel application:')
+st.header('Application Usage')
+st.subheader(' Follow the usage instructions provided below:')
 st.markdown("""
-1.) Create a network rule using the below query which will allow snowflake to access OpenAI endpoint
-""")
-code = '''CREATE OR REPLACE NETWORK RULE OPENAI_NETWORK_RULE
- MODE = EGRESS
- TYPE = HOST_PORT
- VALUE_LIST = ('api.openai.com');'''
-st.code(code, language='sql')
-
-st.markdown("""
-2.) create a secret which contains your OpenAI API KEY. Use the below query to create the same, place your key inside single quotes of SECRET_STRING variable.
-""")
-code = '''CREATE OR REPLACE SECRET SAMPLE_DB.SAMPLE_SCHEMA.OPENAI_SECRET
- TYPE = GENERIC_STRING
- SECRET_STRING = '';'''
-st.code(code, language='sql')
-
-st.markdown("""
-3.) Create an external access integration object using below Query,which will allow network traffic from snowflake to OpenAI.
-    Make sure to set the value of ALLOWED_NETWORK_RULES to the object created in step 1 and value of ALLOWED_AUTHENTICATION_SECRETS to the 
-    object created in step 2
-""")
-code = '''CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION SAMPLE_DB.SAMPLE_SCHEMA.OPENAI_EXT_ACCESS_INT
- ALLOWED_NETWORK_RULES = (OPENAI_NETWORK_RULE)
- ALLOWED_AUTHENTICATION_SECRETS = (SAMPLE_DB.SAMPLE_SCHEMA.OPENAI_SECRET)
- ENABLED = true;'''
-st.code(code, language='sql')
-
-st.markdown("""
-4.)Provide access for the application to access the objects created in steps 1,2,3 by running below queries.
-   Below Queries needs to be executed after every re-installation.
-""")
-code = '''GRANT USAGE ON DATABASE SAMPLE_DB TO APPLICATION INVESTINTEL;                                                   --- Database where the secret and external access integration are created
-GRANT USAGE ON SCHEMA SAMPLE_DB.SAMPLE_SCHEMA TO APPLICATION INVESTINTEL;                                       --- Schema where the secret and external access integration are created
-GRANT USAGE ON INTEGRATION SAMPLE_DB.SAMPLE_SCHEMA.OPENAI_EXT_ACCESS_INT TO APPLICATION INVESTINTEL;
-GRANT READ ON SECRET SAMPLE_DB.SAMPLE_SCHEMA.OPENAI_SECRET TO APPLICATION INVESTINTEL;'''
-st.code(code, language='sql')
-
-st.markdown("""
-5.) Once the application is installed navigate to the configuration page of the streamlit application and input the secret object created in step 2 and external access integration object created in step 3. 
+1.	Accessing the Application:
+•	Install the Investintel application from Snowflake Marketplace in your current snowflake account
+•	Configure the application using the steps provided in the application readme file
+•	Once the configuration steps are complete navigate to the streamlit interface of application in snowflake and submit the credentials created during the configuration 
+2.	Natural Language Queries:
+•	Navigate to the investintel page in the streamlit application after submitting the credentials.  From here, users can start asking queries in natural language in the query input box provided.
+•	Type your question or query in the input box. For example: “Which schemes had the best average NAV since last year?” and hit ENTER.
+•	The system will translate this query into SQL, retrieve the data, and display it on the screen.
+3.	Viewing Results:
+•	Results will appear in tabular format. Users can download the data in CSV format if required.
+4.	Generating Visualizations:
+•	If a user wants to visualize the data, there is an option to select the type of chart they would like to use.
+•	Once the type of chart is selected click the plot button to visualize the data using the selected chart
 """)
 
-st.header('Sample Questions')
+st.header('Sample Queries')
+st.subheader('To help you get started, here are a few sample queries that can be asked within the Investintel application:')
 st.markdown("""
-1.) which schemes had the best avg NAV since last year
+1.	Which schemes had the best average NAV since last year?
+•	This query retrieves schemes with the highest average NAV performance over the last year.
+2.	Show me the top 5 schemes with the highest NAV as per the latest date.
+•	This query returns the top 5 schemes ranked by their NAV as of the most recent date.
+3.	What is the NAV of [Scheme Name] as of today?
+•	Replace [Scheme Name] with the actual scheme you want to inquire about, and the system will return the latest NAV data for that scheme.
+4.	Compare the performance of [Scheme A] and [Scheme B] over the past 6 months
+•	This query helps compare the NAV performance of two different mutual fund schemes over a specific time.
+""")
 
-2.) show me top 5 schemes with highest NAV as per latest date
+st.header('Support and Maintenance')
+st.markdown("""
+Investintel is maintained by the NSEIT team. Users encountering any issues or requiring additional data categories or technical support can reach out to the NSEIT support team. The platform is regularly updated with new features, ensuring that it remains a reliable tool for analyzing mutual fund data.
+""")
+
+st.header('Conclusion')
+st.markdown("""
+Investintel simplifies access to critical mutual fund information for both novice and experienced investors. With natural language querying, real-time data updates, and integrated visualization, the platform offers everything users need to make informed investment decisions. Whether you're tracking large-cap mutual funds or requesting additional fund data, Investintel is designed to meet your needs without requiring any technical expertise.
 """)
