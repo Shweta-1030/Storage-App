@@ -30,7 +30,6 @@ st.subheader('4.	Zero Development')
 st.markdown("""
 •	Description: Clients using Investintel are completely free from development-related tasks. All technical aspects, including query processing, database management, and system updates, are managed by the NSEIT team.
 •	Use Case: Businesses and individual users can focus entirely on analyzing and making decisions based on the data, without worrying about managing the infrastructure or handling maintenance.
-
 """)
 st.subheader('5.	Custom Data on Request')
 st.markdown("""
@@ -40,32 +39,44 @@ st.markdown("""
 
 st.header('Application Usage')
 st.subheader(' Follow the usage instructions provided below:')
+st.subheader('1.	Accessing the Application:')
 st.markdown("""
-1.	Accessing the Application:
 •	Install the Investintel application from Snowflake Marketplace in your current snowflake account
 •	Configure the application using the steps provided in the application readme file
 •	Once the configuration steps are complete navigate to the streamlit interface of application in snowflake and submit the credentials created during the configuration 
-2.	Natural Language Queries:
+""")
+st.subheader('2.	Natural Language Queries:')
+st.markdown("""
 •	Navigate to the investintel page in the streamlit application after submitting the credentials.  From here, users can start asking queries in natural language in the query input box provided.
 •	Type your question or query in the input box. For example: “Which schemes had the best average NAV since last year?” and hit ENTER.
 •	The system will translate this query into SQL, retrieve the data, and display it on the screen.
-3.	Viewing Results:
+""")
+st.subheader('3.	Viewing Results:')
+st.markdown("""
 •	Results will appear in tabular format. Users can download the data in CSV format if required.
-4.	Generating Visualizations:
+""")
+st.subheader('4.	Generating Visualizations:')
+st.markdown("""
 •	If a user wants to visualize the data, there is an option to select the type of chart they would like to use.
 •	Once the type of chart is selected click the plot button to visualize the data using the selected chart
 """)
 
 st.header('Sample Queries')
 st.subheader('To help you get started, here are a few sample queries that can be asked within the Investintel application:')
+st.subheader('1.	Which schemes had the best average NAV since last year?')
 st.markdown("""
-1.	Which schemes had the best average NAV since last year?
 •	This query retrieves schemes with the highest average NAV performance over the last year.
-2.	Show me the top 5 schemes with the highest NAV as per the latest date.
+""")           
+st.subheader('2.	Show me the top 5 schemes with the highest NAV as per the latest date.')
+st.markdown("""
 •	This query returns the top 5 schemes ranked by their NAV as of the most recent date.
-3.	What is the NAV of [Scheme Name] as of today?
+""")            
+st.subheader('3.	What is the NAV of [Scheme Name] as of today?')
+st.markdown("""
 •	Replace [Scheme Name] with the actual scheme you want to inquire about, and the system will return the latest NAV data for that scheme.
-4.	Compare the performance of [Scheme A] and [Scheme B] over the past 6 months
+""")           
+st.subheader('4.	Compare the performance of [Scheme A] and [Scheme B] over the past 6 months')
+st.markdown("""
 •	This query helps compare the NAV performance of two different mutual fund schemes over a specific time.
 """)
 
